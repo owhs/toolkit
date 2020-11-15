@@ -32,5 +32,9 @@ namespace toolkit
 		{
 			Application.Exit();
 		}
+		void MainmenuDeactivate(object sender, EventArgs e)
+		{
+			this.Close();
+		}
 	}
 }

@@ -75,10 +75,10 @@ namespace toolkit
                 Rectangle clientRectangle = ClientRectangle;
                 clientRectangle.Inflate(2, 2);
 
-                Pen border = new Pen(Color.Black);
+                Pen border = new Pen(Color.Transparent);
                 g.DrawRectangle(border, clientRectangle);
 
-                Brush solidBrush = new SolidBrush(Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(55)))), ((int)(((byte)(33))))));
+                Brush solidBrush = new SolidBrush(Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(88)))), ((int)(((byte)(33))))));
                 //Brush solidBrush = new SolidBrush(Color.FromArgb(30, 70, 130)
                 g.FillRectangle(solidBrush, ClientRectangle);
 
