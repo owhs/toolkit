@@ -35,6 +35,11 @@ namespace toolkit
 		private System.Windows.Forms.CheckBox checkBox3;
 		private System.Windows.Forms.ListView listView1;
 		private System.Windows.Forms.ImageList pItems;
+		private System.Windows.Forms.ContextMenuStrip portableCTX;
+		private System.Windows.Forms.ToolStripMenuItem runAsAdministratorToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem favouriteToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem allToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem noneToolStripMenuItem;
 		
 		/// <summary>
 		/// Disposes resources used by the form.
@@ -58,11 +63,13 @@ namespace toolkit
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
-			System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("");
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainmenu));
 			this.tabControl1 = new toolkit.CustomTabControl();
 			this.tabPage1 = new System.Windows.Forms.TabPage();
 			this.listView1 = new System.Windows.Forms.ListView();
+			this.portableCTX = new System.Windows.Forms.ContextMenuStrip(this.components);
+			this.runAsAdministratorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.favouriteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.pItems = new System.Windows.Forms.ImageList(this.components);
 			this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
 			this.checkBox11 = new System.Windows.Forms.CheckBox();
@@ -81,8 +88,11 @@ namespace toolkit
 			this.tabPage3 = new System.Windows.Forms.TabPage();
 			this.tabPage4 = new System.Windows.Forms.TabPage();
 			this.tabPage5 = new System.Windows.Forms.TabPage();
+			this.allToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.noneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
+			this.portableCTX.SuspendLayout();
 			this.tableLayoutPanel1.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -126,16 +136,42 @@ namespace toolkit
 			// 
 			this.listView1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
 			this.listView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.listView1.ContextMenuStrip = this.portableCTX;
 			this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.listView1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
-			this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-			listViewItem1});
 			this.listView1.LargeImageList = this.pItems;
 			this.listView1.Location = new System.Drawing.Point(3, 115);
 			this.listView1.Name = "listView1";
 			this.listView1.Size = new System.Drawing.Size(560, 454);
 			this.listView1.TabIndex = 2;
 			this.listView1.UseCompatibleStateImageBehavior = false;
+			this.listView1.DoubleClick += new System.EventHandler(this.ListView1DoubleClick);
+			// 
+			// portableCTX
+			// 
+			this.portableCTX.ImageScalingSize = new System.Drawing.Size(24, 24);
+			this.portableCTX.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+			this.runAsAdministratorToolStripMenuItem,
+			this.favouriteToolStripMenuItem});
+			this.portableCTX.Name = "portableCTX";
+			this.portableCTX.Size = new System.Drawing.Size(252, 97);
+			this.portableCTX.Opening += new System.ComponentModel.CancelEventHandler(this.PortableCTXOpening);
+			// 
+			// runAsAdministratorToolStripMenuItem
+			// 
+			this.runAsAdministratorToolStripMenuItem.Name = "runAsAdministratorToolStripMenuItem";
+			this.runAsAdministratorToolStripMenuItem.Size = new System.Drawing.Size(251, 30);
+			this.runAsAdministratorToolStripMenuItem.Text = "Run as Administrator";
+			// 
+			// favouriteToolStripMenuItem
+			// 
+			this.favouriteToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+			this.allToolStripMenuItem,
+			this.noneToolStripMenuItem});
+			this.favouriteToolStripMenuItem.Name = "favouriteToolStripMenuItem";
+			this.favouriteToolStripMenuItem.Size = new System.Drawing.Size(251, 30);
+			this.favouriteToolStripMenuItem.Text = "Filter";
+			this.favouriteToolStripMenuItem.Click += new System.EventHandler(this.FavouriteToolStripMenuItemClick);
 			// 
 			// pItems
 			// 
@@ -403,6 +439,18 @@ namespace toolkit
 			this.tabPage5.TabIndex = 4;
 			this.tabPage5.Text = "Options";
 			// 
+			// allToolStripMenuItem
+			// 
+			this.allToolStripMenuItem.Name = "allToolStripMenuItem";
+			this.allToolStripMenuItem.Size = new System.Drawing.Size(210, 30);
+			this.allToolStripMenuItem.Text = "All";
+			// 
+			// noneToolStripMenuItem
+			// 
+			this.noneToolStripMenuItem.Name = "noneToolStripMenuItem";
+			this.noneToolStripMenuItem.Size = new System.Drawing.Size(210, 30);
+			this.noneToolStripMenuItem.Text = "None";
+			// 
 			// mainmenu
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 22F);
@@ -426,6 +474,7 @@ namespace toolkit
 			this.tabControl1.ResumeLayout(false);
 			this.tabPage1.ResumeLayout(false);
 			this.tabPage1.PerformLayout();
+			this.portableCTX.ResumeLayout(false);
 			this.tableLayoutPanel1.ResumeLayout(false);
 			this.ResumeLayout(false);
 
