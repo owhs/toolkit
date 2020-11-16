@@ -40,6 +40,7 @@ namespace toolkit
 		private System.Windows.Forms.ToolStripMenuItem favouriteToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem allToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem noneToolStripMenuItem;
+		private System.Windows.Forms.OpenFileDialog fileOpen;
 		
 		/// <summary>
 		/// Disposes resources used by the form.
@@ -70,6 +71,8 @@ namespace toolkit
 			this.portableCTX = new System.Windows.Forms.ContextMenuStrip(this.components);
 			this.runAsAdministratorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.favouriteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.allToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.noneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.pItems = new System.Windows.Forms.ImageList(this.components);
 			this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
 			this.checkBox11 = new System.Windows.Forms.CheckBox();
@@ -88,8 +91,7 @@ namespace toolkit
 			this.tabPage3 = new System.Windows.Forms.TabPage();
 			this.tabPage4 = new System.Windows.Forms.TabPage();
 			this.tabPage5 = new System.Windows.Forms.TabPage();
-			this.allToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.noneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.fileOpen = new System.Windows.Forms.OpenFileDialog();
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			this.portableCTX.SuspendLayout();
@@ -154,7 +156,7 @@ namespace toolkit
 			this.runAsAdministratorToolStripMenuItem,
 			this.favouriteToolStripMenuItem});
 			this.portableCTX.Name = "portableCTX";
-			this.portableCTX.Size = new System.Drawing.Size(252, 97);
+			this.portableCTX.Size = new System.Drawing.Size(252, 64);
 			this.portableCTX.Opening += new System.ComponentModel.CancelEventHandler(this.PortableCTXOpening);
 			// 
 			// runAsAdministratorToolStripMenuItem
@@ -172,6 +174,18 @@ namespace toolkit
 			this.favouriteToolStripMenuItem.Size = new System.Drawing.Size(251, 30);
 			this.favouriteToolStripMenuItem.Text = "Filter";
 			this.favouriteToolStripMenuItem.Click += new System.EventHandler(this.FavouriteToolStripMenuItemClick);
+			// 
+			// allToolStripMenuItem
+			// 
+			this.allToolStripMenuItem.Name = "allToolStripMenuItem";
+			this.allToolStripMenuItem.Size = new System.Drawing.Size(139, 30);
+			this.allToolStripMenuItem.Text = "All";
+			// 
+			// noneToolStripMenuItem
+			// 
+			this.noneToolStripMenuItem.Name = "noneToolStripMenuItem";
+			this.noneToolStripMenuItem.Size = new System.Drawing.Size(139, 30);
+			this.noneToolStripMenuItem.Text = "None";
 			// 
 			// pItems
 			// 
@@ -439,17 +453,9 @@ namespace toolkit
 			this.tabPage5.TabIndex = 4;
 			this.tabPage5.Text = "Options";
 			// 
-			// allToolStripMenuItem
+			// fileOpen
 			// 
-			this.allToolStripMenuItem.Name = "allToolStripMenuItem";
-			this.allToolStripMenuItem.Size = new System.Drawing.Size(210, 30);
-			this.allToolStripMenuItem.Text = "All";
-			// 
-			// noneToolStripMenuItem
-			// 
-			this.noneToolStripMenuItem.Name = "noneToolStripMenuItem";
-			this.noneToolStripMenuItem.Size = new System.Drawing.Size(210, 30);
-			this.noneToolStripMenuItem.Text = "None";
+			this.fileOpen.Filter = "Executables|*.exe";
 			// 
 			// mainmenu
 			// 

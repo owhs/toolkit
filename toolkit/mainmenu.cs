@@ -51,6 +51,7 @@ namespace toolkit
 		}
 		void MainmenuLoad(object sender, EventArgs e)
 		{
+			this.FormBorderStyle = FormBorderStyle.None;
 			/*var icon = Icon.ExtractAssociatedIcon(@"E:\data\portable\dev\SharpDevelop\bin\SharpDevelop.exe");
 			pItems.Images.Add("abc" ,icon);
 			listView1.Items.Add("lol", "abc");
