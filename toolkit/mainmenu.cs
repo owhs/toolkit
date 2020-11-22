@@ -28,6 +28,11 @@ namespace toolkit
 			//
 			InitializeComponent();
 			this.FormBorderStyle = FormBorderStyle.None;
+			
+			//this.Location
+			//Screen.PrimaryScreen.WorkingArea.Width
+			
+			
 			//
 			// TODO: Add constructor code after the InitializeComponent() call.
 			//
@@ -41,6 +46,7 @@ namespace toolkit
 		void MainmenuDeactivate(object sender, EventArgs e)
 		{
 			if (!dialog) this.Close();
+			else this.Opacity = 0.98;
 		}
 		
 		void MainmenuMouseDown(object sender, MouseEventArgs e)
@@ -53,6 +59,9 @@ namespace toolkit
 		
 		void MainmenuLoad(object sender, EventArgs e)
 		{
+			this.Location = new Point(
+	                (Screen.PrimaryScreen.WorkingArea.Width - this.Width), (Screen.PrimaryScreen.WorkingArea.Height - this.Height));
+			
 			footer.Text = "";
 			
 			string sp = Application.StartupPath+"\\config.csv";
@@ -170,6 +179,10 @@ namespace toolkit
 		}
 		void AddToolStripMenuItemClick(object sender, EventArgs e)
 		{
+			dialog = true;
+			Form f = new sourcesPortable();
+			f.ShowDialog();
+			dialog = false;
 		}
 		void ListView1Click(object sender, EventArgs e)
 		{
@@ -211,6 +224,15 @@ namespace toolkit
 			Form f = new sourcesPortable();
 			f.ShowDialog();
 			dialog = false;
+		}
+		void MainmenuActivated(object sender, EventArgs e)
+		{
+			this.Opacity=1;
+		}
+		void MainmenuVisibleChanged(object sender, EventArgs e)
+		{
+			this.Location = new Point(
+	                (Screen.PrimaryScreen.WorkingArea.Width - this.Width), (Screen.PrimaryScreen.WorkingArea.Height - this.Height));
 		}
 		
 	}

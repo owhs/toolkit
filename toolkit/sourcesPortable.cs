@@ -66,9 +66,12 @@ namespace toolkit
 			mouseDown = false;
 		}
 		
+		string drive = "";
+		
 		void SourcesPortableLoad(object sender, EventArgs e)
 		{
-			
+			string sp = Application.StartupPath+"\\config.csv";
+			drive = sp.Split('\\')[0]+"\\";
 		}
 		void Button1Click(object sender, EventArgs e)
 		{
@@ -80,6 +83,10 @@ namespace toolkit
 				this.WindowState = FormWindowState.Normal;
 			}
 			else this.WindowState = FormWindowState.Maximized;
+		}
+		void Label1DoubleClick(object sender, EventArgs e)
+		{
+			button2.PerformClick();
 		}
 		
 	}

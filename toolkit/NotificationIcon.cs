@@ -30,6 +30,9 @@ namespace toolkit
 			
 			notifyIcon.DoubleClick += IconDoubleClick;
 			
+			//notificationMenu.MenuItems[0].Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+			
+			
 			//System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NotificationIcon));
 			//notifyIcon.Icon = (Icon)resources.GetObject("$this.Icon");
 			
