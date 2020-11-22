@@ -56,7 +56,7 @@ namespace toolkit
 		
 		void MainmenuLoad(object sender, EventArgs e)
 		{
-			this.FormBorderStyle = FormBorderStyle.None;
+			//this.FormBorderStyle = FormBorderStyle.None;
 			
 			string sp = Application.StartupPath+"\\config.csv";
 			drive = sp.Split('\\')[0]+"\\";
@@ -67,14 +67,15 @@ namespace toolkit
 			foreach (string v in lines) {
 				var spl = v.Split(',');
 				
-				var icon = Icon.ExtractAssociatedIcon(drive + spl[1]);
-				pItems.Images.Add(spl[0] ,icon);
+				try{
+					var icon = Icon.ExtractAssociatedIcon(drive + spl[1]);
+					pItems.Images.Add(spl[0] ,icon);
+				}catch{}
+				
 				
 				ListViewItem i = new ListViewItem();
 				i.Text = i.ImageKey = spl[0];
-				i.ToolTipText = drive + spl[1];
-				i.Tag = spl[2];
-				
+				i.ToolTipText = drive + spl[1];				
 				
 				listView1.Items.Add(i);
 				
@@ -130,7 +131,6 @@ namespace toolkit
 					ListViewItem i = new ListViewItem();
 					i.Text = i.ImageKey = spl[0];
 					i.ToolTipText = drive + spl[1];
-					i.Tag = spl[2];
 					
 					listView1.Items.Add(i);
 				}
@@ -155,7 +155,6 @@ namespace toolkit
 					ListViewItem i = new ListViewItem();
 					i.Text = i.ImageKey = spl[0];
 					i.ToolTipText = drive + spl[1];
-					i.Tag = spl[2];
 					
 					listView1.Items.Add(i);
 				}
@@ -171,6 +170,13 @@ namespace toolkit
 				ch.Checked=t.Text=="All";
 			}
 			
+		}
+		void AddToolStripMenuItemClick(object sender, EventArgs e)
+		{
+			if (fileOpen.ShowDialog() == DialogResult.OK){
+				string path = fileOpen.FileName;
+				
+			}
 		}
 		
 	}

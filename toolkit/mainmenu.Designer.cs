@@ -42,6 +42,7 @@ namespace toolkit
 		private System.Windows.Forms.ToolStripMenuItem noneToolStripMenuItem;
 		private System.Windows.Forms.OpenFileDialog fileOpen;
 		private System.Windows.Forms.CheckBox checkBox12;
+		private System.Windows.Forms.ToolStripMenuItem addToolStripMenuItem;
 		
 		/// <summary>
 		/// Disposes resources used by the form.
@@ -74,9 +75,9 @@ namespace toolkit
 			this.favouriteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.allToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.noneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.pItems = new System.Windows.Forms.ImageList(this.components);
 			this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-			this.checkBox12 = new System.Windows.Forms.CheckBox();
 			this.checkBox11 = new System.Windows.Forms.CheckBox();
 			this.checkBox10 = new System.Windows.Forms.CheckBox();
 			this.checkBox9 = new System.Windows.Forms.CheckBox();
@@ -87,13 +88,14 @@ namespace toolkit
 			this.checkBox4 = new System.Windows.Forms.CheckBox();
 			this.checkBox3 = new System.Windows.Forms.CheckBox();
 			this.checkBox2 = new System.Windows.Forms.CheckBox();
-			this.checkBox1 = new System.Windows.Forms.CheckBox();
 			this.textBox1 = new System.Windows.Forms.TextBox();
 			this.tabPage2 = new System.Windows.Forms.TabPage();
 			this.tabPage3 = new System.Windows.Forms.TabPage();
 			this.tabPage4 = new System.Windows.Forms.TabPage();
 			this.tabPage5 = new System.Windows.Forms.TabPage();
 			this.fileOpen = new System.Windows.Forms.OpenFileDialog();
+			this.checkBox1 = new System.Windows.Forms.CheckBox();
+			this.checkBox12 = new System.Windows.Forms.CheckBox();
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			this.portableCTX.SuspendLayout();
@@ -156,9 +158,10 @@ namespace toolkit
 			this.portableCTX.ImageScalingSize = new System.Drawing.Size(24, 24);
 			this.portableCTX.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
 			this.runAsAdministratorToolStripMenuItem,
-			this.favouriteToolStripMenuItem});
+			this.favouriteToolStripMenuItem,
+			this.addToolStripMenuItem});
 			this.portableCTX.Name = "portableCTX";
-			this.portableCTX.Size = new System.Drawing.Size(252, 97);
+			this.portableCTX.Size = new System.Drawing.Size(252, 94);
 			this.portableCTX.Opening += new System.ComponentModel.CancelEventHandler(this.PortableCTXOpening);
 			// 
 			// runAsAdministratorToolStripMenuItem
@@ -180,16 +183,23 @@ namespace toolkit
 			// allToolStripMenuItem
 			// 
 			this.allToolStripMenuItem.Name = "allToolStripMenuItem";
-			this.allToolStripMenuItem.Size = new System.Drawing.Size(210, 30);
+			this.allToolStripMenuItem.Size = new System.Drawing.Size(139, 30);
 			this.allToolStripMenuItem.Text = "All";
 			this.allToolStripMenuItem.Click += new System.EventHandler(this.AllToolStripMenuItemClick);
 			// 
 			// noneToolStripMenuItem
 			// 
 			this.noneToolStripMenuItem.Name = "noneToolStripMenuItem";
-			this.noneToolStripMenuItem.Size = new System.Drawing.Size(210, 30);
+			this.noneToolStripMenuItem.Size = new System.Drawing.Size(139, 30);
 			this.noneToolStripMenuItem.Text = "None";
 			this.noneToolStripMenuItem.Click += new System.EventHandler(this.AllToolStripMenuItemClick);
+			// 
+			// addToolStripMenuItem
+			// 
+			this.addToolStripMenuItem.Name = "addToolStripMenuItem";
+			this.addToolStripMenuItem.Size = new System.Drawing.Size(251, 30);
+			this.addToolStripMenuItem.Text = "Add";
+			this.addToolStripMenuItem.Click += new System.EventHandler(this.AddToolStripMenuItemClick);
 			// 
 			// pItems
 			// 
@@ -230,23 +240,6 @@ namespace toolkit
 			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
 			this.tableLayoutPanel1.Size = new System.Drawing.Size(560, 72);
 			this.tableLayoutPanel1.TabIndex = 1;
-			// 
-			// checkBox12
-			// 
-			this.checkBox12.Appearance = System.Windows.Forms.Appearance.Button;
-			this.checkBox12.Checked = true;
-			this.checkBox12.CheckState = System.Windows.Forms.CheckState.Checked;
-			this.checkBox12.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.checkBox12.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(66)))), ((int)(((byte)(33)))));
-			this.checkBox12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.checkBox12.Location = new System.Drawing.Point(3, 41);
-			this.checkBox12.Name = "checkBox12";
-			this.checkBox12.Size = new System.Drawing.Size(87, 28);
-			this.checkBox12.TabIndex = 14;
-			this.checkBox12.Text = "hdd";
-			this.checkBox12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			this.checkBox12.UseVisualStyleBackColor = true;
-			this.checkBox12.CheckedChanged += new System.EventHandler(this.CheckBox1CheckedChanged);
 			// 
 			// checkBox11
 			// 
@@ -418,23 +411,6 @@ namespace toolkit
 			this.checkBox2.UseVisualStyleBackColor = true;
 			this.checkBox2.CheckedChanged += new System.EventHandler(this.CheckBox1CheckedChanged);
 			// 
-			// checkBox1
-			// 
-			this.checkBox1.Appearance = System.Windows.Forms.Appearance.Button;
-			this.checkBox1.Checked = true;
-			this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
-			this.checkBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.checkBox1.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(66)))), ((int)(((byte)(33)))));
-			this.checkBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.checkBox1.Location = new System.Drawing.Point(3, 8);
-			this.checkBox1.Name = "checkBox1";
-			this.checkBox1.Size = new System.Drawing.Size(87, 27);
-			this.checkBox1.TabIndex = 3;
-			this.checkBox1.Text = "common";
-			this.checkBox1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			this.checkBox1.UseVisualStyleBackColor = true;
-			this.checkBox1.CheckedChanged += new System.EventHandler(this.CheckBox1CheckedChanged);
-			// 
 			// textBox1
 			// 
 			this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
@@ -493,6 +469,40 @@ namespace toolkit
 			// fileOpen
 			// 
 			this.fileOpen.Filter = "Executables|*.exe";
+			// 
+			// checkBox1
+			// 
+			this.checkBox1.Appearance = System.Windows.Forms.Appearance.Button;
+			this.checkBox1.Checked = true;
+			this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
+			this.checkBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.checkBox1.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(66)))), ((int)(((byte)(33)))));
+			this.checkBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.checkBox1.Location = new System.Drawing.Point(3, 8);
+			this.checkBox1.Name = "checkBox1";
+			this.checkBox1.Size = new System.Drawing.Size(87, 27);
+			this.checkBox1.TabIndex = 3;
+			this.checkBox1.Text = "common";
+			this.checkBox1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.checkBox1.UseVisualStyleBackColor = true;
+			this.checkBox1.CheckedChanged += new System.EventHandler(this.CheckBox1CheckedChanged);
+			// 
+			// checkBox12
+			// 
+			this.checkBox12.Appearance = System.Windows.Forms.Appearance.Button;
+			this.checkBox12.Checked = true;
+			this.checkBox12.CheckState = System.Windows.Forms.CheckState.Checked;
+			this.checkBox12.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.checkBox12.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(66)))), ((int)(((byte)(33)))));
+			this.checkBox12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.checkBox12.Location = new System.Drawing.Point(3, 41);
+			this.checkBox12.Name = "checkBox12";
+			this.checkBox12.Size = new System.Drawing.Size(87, 28);
+			this.checkBox12.TabIndex = 14;
+			this.checkBox12.Text = "hdd";
+			this.checkBox12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.checkBox12.UseVisualStyleBackColor = true;
+			this.checkBox12.CheckedChanged += new System.EventHandler(this.CheckBox1CheckedChanged);
 			// 
 			// mainmenu
 			// 
