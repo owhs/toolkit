@@ -20,6 +20,7 @@ namespace toolkit
 	/// </summary>
 	public partial class mainmenu : Form
 	{
+		
 		public mainmenu()
 		{
 			//
@@ -47,34 +48,38 @@ namespace toolkit
 		}
 		void MainmenuMouseDown(object sender, MouseEventArgs e)
 		{
-			Console.WriteLine(this.Focused);
+			//Console.WriteLine(this.Focused);
 		}
+		
+		Array lines;
+		string drive;
+		
 		void MainmenuLoad(object sender, EventArgs e)
 		{
 			this.FormBorderStyle = FormBorderStyle.None;
-			/*var icon = Icon.ExtractAssociatedIcon(@"E:\data\portable\dev\SharpDevelop\bin\SharpDevelop.exe");
-			pItems.Images.Add("abc" ,icon);
-			listView1.Items.Add("lol", "abc");
-			*/
+			
 			string sp = Application.StartupPath+"\\config.csv";
-			string drive = sp.Split('\\')[0]+"\\";
-			//sp;
+			drive = sp.Split('\\')[0]+"\\";
+			
 			StreamReader sr = new StreamReader(sp);
-			Array lines = sr.ReadToEnd().Split('\n');
+			lines = sr.ReadToEnd().Split('\n');
+			
 			foreach (string v in lines) {
 				var spl = v.Split(',');
-				//richTextBox1.Text += drive + spl[1] + "\n";
+				
 				var icon = Icon.ExtractAssociatedIcon(drive + spl[1]);
 				pItems.Images.Add(spl[0] ,icon);
 				
 				ListViewItem i = new ListViewItem();
-				i.Text = spl[0];
-				i.ImageKey = spl[0];
-				i.Tag = spl[2];
+				i.Text = i.ImageKey = spl[0];
 				i.ToolTipText = drive + spl[1];
+				i.Tag = spl[2];
+				
 				
 				listView1.Items.Add(i);
+				
 			}
+			//listView1.Items.AddRange(portableItems);
 		}
 		void ListView1DoubleClick(object sender, EventArgs e)
 		{
@@ -100,6 +105,72 @@ namespace toolkit
 		void FavouriteToolStripMenuItemClick(object sender, EventArgs e)
 		{
 	
+		}
+		void TextBox1MouseDown(object sender, MouseEventArgs e)
+		{
+			
+		}
+		void TextBox1Enter(object sender, EventArgs e)
+		{
+			if (textBox1.Text=="Search...") textBox1.Text = "";
+		}
+		void TextBox1Leave(object sender, EventArgs e)
+		{
+			if (textBox1.Text=="") textBox1.Text = "Search...";
+		}
+		void TextBox1TextChanged(object sender, EventArgs e)
+		{
+			listView1.Items.Clear();
+			tableLayoutPanel1.Enabled = textBox1.Text.Length==0;
+			foreach (string v in lines) {
+				var spl = v.Split(',');
+				
+				if (spl[0].ToLower().Contains(textBox1.Text.ToLower()))
+				{
+					ListViewItem i = new ListViewItem();
+					i.Text = i.ImageKey = spl[0];
+					i.ToolTipText = drive + spl[1];
+					i.Tag = spl[2];
+					
+					listView1.Items.Add(i);
+				}
+			}
+		}
+		void CheckBox1CheckedChanged(object sender, EventArgs e)
+		{
+			listView1.Items.Clear();
+			
+			string tags = "";
+			
+			foreach (Control c in tableLayoutPanel1.Controls)
+			{
+				CheckBox ch = (CheckBox)c;
+				if (ch.Checked) tags += ch.Text + ",";
+			}
+					
+			foreach (string v in lines) {
+				var spl = v.Split(',');
+				
+				if (tags.Contains(spl[2].Trim())){
+					ListViewItem i = new ListViewItem();
+					i.Text = i.ImageKey = spl[0];
+					i.ToolTipText = drive + spl[1];
+					i.Tag = spl[2];
+					
+					listView1.Items.Add(i);
+				}
+			}
+		}
+		void AllToolStripMenuItemClick(object sender, EventArgs e)
+		{
+			ToolStripItem t = (ToolStripItem)sender;
+			
+			foreach (Control c in tableLayoutPanel1.Controls)
+			{
+				CheckBox ch = (CheckBox)c;
+				ch.Checked=t.Text=="All";
+			}
+			
 		}
 		
 	}
