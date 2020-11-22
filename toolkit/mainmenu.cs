@@ -58,6 +58,8 @@ namespace toolkit
 		{
 			//this.FormBorderStyle = FormBorderStyle.None;
 			
+			footer.Text = "";
+			
 			string sp = Application.StartupPath+"\\config.csv";
 			drive = sp.Split('\\')[0]+"\\";
 			
@@ -75,7 +77,8 @@ namespace toolkit
 				
 				ListViewItem i = new ListViewItem();
 				i.Text = i.ImageKey = spl[0];
-				i.ToolTipText = drive + spl[1];				
+				i.ToolTipText = drive + spl[1];
+				if(spl.Length==4) i.Tag = spl[3];
 				
 				listView1.Items.Add(i);
 				
@@ -131,6 +134,7 @@ namespace toolkit
 					ListViewItem i = new ListViewItem();
 					i.Text = i.ImageKey = spl[0];
 					i.ToolTipText = drive + spl[1];
+					if(spl.Length==4) i.Tag = spl[3];
 					
 					listView1.Items.Add(i);
 				}
@@ -155,6 +159,7 @@ namespace toolkit
 					ListViewItem i = new ListViewItem();
 					i.Text = i.ImageKey = spl[0];
 					i.ToolTipText = drive + spl[1];
+					if(spl.Length==4) i.Tag = spl[3];
 					
 					listView1.Items.Add(i);
 				}
@@ -177,6 +182,16 @@ namespace toolkit
 				string path = fileOpen.FileName;
 				
 			}
+		}
+		void ListView1SelectedIndexChanged(object sender, EventArgs e)
+		{
+	
+		}
+		void ListView1Click(object sender, EventArgs e)
+		{
+			if (listView1.SelectedItems.Count>0 && listView1.SelectedItems[0].Tag!=null){
+				footer.Text=listView1.SelectedItems[0].Tag.ToString();
+			} else footer.Text="";
 		}
 		
 	}

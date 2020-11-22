@@ -43,6 +43,8 @@ namespace toolkit
 		private System.Windows.Forms.OpenFileDialog fileOpen;
 		private System.Windows.Forms.CheckBox checkBox12;
 		private System.Windows.Forms.ToolStripMenuItem addToolStripMenuItem;
+		private System.Windows.Forms.ToolTip toolTip1;
+		private System.Windows.Forms.Label footer;
 		
 		/// <summary>
 		/// Disposes resources used by the form.
@@ -77,7 +79,9 @@ namespace toolkit
 			this.noneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.pItems = new System.Windows.Forms.ImageList(this.components);
+			this.footer = new System.Windows.Forms.Label();
 			this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+			this.checkBox12 = new System.Windows.Forms.CheckBox();
 			this.checkBox11 = new System.Windows.Forms.CheckBox();
 			this.checkBox10 = new System.Windows.Forms.CheckBox();
 			this.checkBox9 = new System.Windows.Forms.CheckBox();
@@ -88,14 +92,14 @@ namespace toolkit
 			this.checkBox4 = new System.Windows.Forms.CheckBox();
 			this.checkBox3 = new System.Windows.Forms.CheckBox();
 			this.checkBox2 = new System.Windows.Forms.CheckBox();
+			this.checkBox1 = new System.Windows.Forms.CheckBox();
 			this.textBox1 = new System.Windows.Forms.TextBox();
 			this.tabPage2 = new System.Windows.Forms.TabPage();
 			this.tabPage3 = new System.Windows.Forms.TabPage();
 			this.tabPage4 = new System.Windows.Forms.TabPage();
 			this.tabPage5 = new System.Windows.Forms.TabPage();
 			this.fileOpen = new System.Windows.Forms.OpenFileDialog();
-			this.checkBox1 = new System.Windows.Forms.CheckBox();
-			this.checkBox12 = new System.Windows.Forms.CheckBox();
+			this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			this.portableCTX.SuspendLayout();
@@ -129,6 +133,7 @@ namespace toolkit
 			// 
 			this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
 			this.tabPage1.Controls.Add(this.listView1);
+			this.tabPage1.Controls.Add(this.footer);
 			this.tabPage1.Controls.Add(this.tableLayoutPanel1);
 			this.tabPage1.Controls.Add(this.textBox1);
 			this.tabPage1.Location = new System.Drawing.Point(4, 117);
@@ -148,9 +153,11 @@ namespace toolkit
 			this.listView1.LargeImageList = this.pItems;
 			this.listView1.Location = new System.Drawing.Point(3, 115);
 			this.listView1.Name = "listView1";
-			this.listView1.Size = new System.Drawing.Size(560, 454);
-			this.listView1.TabIndex = 2;
+			this.listView1.Size = new System.Drawing.Size(560, 431);
+			this.listView1.TabIndex = 4;
 			this.listView1.UseCompatibleStateImageBehavior = false;
+			this.listView1.SelectedIndexChanged += new System.EventHandler(this.ListView1SelectedIndexChanged);
+			this.listView1.Click += new System.EventHandler(this.ListView1Click);
 			this.listView1.DoubleClick += new System.EventHandler(this.ListView1DoubleClick);
 			// 
 			// portableCTX
@@ -207,6 +214,19 @@ namespace toolkit
 			this.pItems.ImageSize = new System.Drawing.Size(32, 32);
 			this.pItems.TransparentColor = System.Drawing.Color.Transparent;
 			// 
+			// footer
+			// 
+			this.footer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+			this.footer.Dock = System.Windows.Forms.DockStyle.Bottom;
+			this.footer.Font = new System.Drawing.Font("Open Sans", 8F);
+			this.footer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+			this.footer.Location = new System.Drawing.Point(3, 546);
+			this.footer.Name = "footer";
+			this.footer.Size = new System.Drawing.Size(560, 23);
+			this.footer.TabIndex = 3;
+			this.footer.Text = "footer text";
+			this.footer.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			// 
 			// tableLayoutPanel1
 			// 
 			this.tableLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
@@ -240,6 +260,23 @@ namespace toolkit
 			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
 			this.tableLayoutPanel1.Size = new System.Drawing.Size(560, 72);
 			this.tableLayoutPanel1.TabIndex = 1;
+			// 
+			// checkBox12
+			// 
+			this.checkBox12.Appearance = System.Windows.Forms.Appearance.Button;
+			this.checkBox12.Checked = true;
+			this.checkBox12.CheckState = System.Windows.Forms.CheckState.Checked;
+			this.checkBox12.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.checkBox12.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(66)))), ((int)(((byte)(33)))));
+			this.checkBox12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.checkBox12.Location = new System.Drawing.Point(3, 41);
+			this.checkBox12.Name = "checkBox12";
+			this.checkBox12.Size = new System.Drawing.Size(87, 28);
+			this.checkBox12.TabIndex = 14;
+			this.checkBox12.Text = "hdd";
+			this.checkBox12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.checkBox12.UseVisualStyleBackColor = true;
+			this.checkBox12.CheckedChanged += new System.EventHandler(this.CheckBox1CheckedChanged);
 			// 
 			// checkBox11
 			// 
@@ -411,6 +448,23 @@ namespace toolkit
 			this.checkBox2.UseVisualStyleBackColor = true;
 			this.checkBox2.CheckedChanged += new System.EventHandler(this.CheckBox1CheckedChanged);
 			// 
+			// checkBox1
+			// 
+			this.checkBox1.Appearance = System.Windows.Forms.Appearance.Button;
+			this.checkBox1.Checked = true;
+			this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
+			this.checkBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.checkBox1.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(66)))), ((int)(((byte)(33)))));
+			this.checkBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.checkBox1.Location = new System.Drawing.Point(3, 8);
+			this.checkBox1.Name = "checkBox1";
+			this.checkBox1.Size = new System.Drawing.Size(87, 27);
+			this.checkBox1.TabIndex = 3;
+			this.checkBox1.Text = "common";
+			this.checkBox1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.checkBox1.UseVisualStyleBackColor = true;
+			this.checkBox1.CheckedChanged += new System.EventHandler(this.CheckBox1CheckedChanged);
+			// 
 			// textBox1
 			// 
 			this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
@@ -469,40 +523,6 @@ namespace toolkit
 			// fileOpen
 			// 
 			this.fileOpen.Filter = "Executables|*.exe";
-			// 
-			// checkBox1
-			// 
-			this.checkBox1.Appearance = System.Windows.Forms.Appearance.Button;
-			this.checkBox1.Checked = true;
-			this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
-			this.checkBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.checkBox1.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(66)))), ((int)(((byte)(33)))));
-			this.checkBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.checkBox1.Location = new System.Drawing.Point(3, 8);
-			this.checkBox1.Name = "checkBox1";
-			this.checkBox1.Size = new System.Drawing.Size(87, 27);
-			this.checkBox1.TabIndex = 3;
-			this.checkBox1.Text = "common";
-			this.checkBox1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			this.checkBox1.UseVisualStyleBackColor = true;
-			this.checkBox1.CheckedChanged += new System.EventHandler(this.CheckBox1CheckedChanged);
-			// 
-			// checkBox12
-			// 
-			this.checkBox12.Appearance = System.Windows.Forms.Appearance.Button;
-			this.checkBox12.Checked = true;
-			this.checkBox12.CheckState = System.Windows.Forms.CheckState.Checked;
-			this.checkBox12.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.checkBox12.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(66)))), ((int)(((byte)(33)))));
-			this.checkBox12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.checkBox12.Location = new System.Drawing.Point(3, 41);
-			this.checkBox12.Name = "checkBox12";
-			this.checkBox12.Size = new System.Drawing.Size(87, 28);
-			this.checkBox12.TabIndex = 14;
-			this.checkBox12.Text = "hdd";
-			this.checkBox12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			this.checkBox12.UseVisualStyleBackColor = true;
-			this.checkBox12.CheckedChanged += new System.EventHandler(this.CheckBox1CheckedChanged);
 			// 
 			// mainmenu
 			// 
