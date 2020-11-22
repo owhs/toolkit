@@ -40,7 +40,7 @@ namespace toolkit
 		}
 		void MainmenuDeactivate(object sender, EventArgs e)
 		{
-			this.Close();
+			if (!dialog) this.Close();
 		}
 		
 		void MainmenuMouseDown(object sender, MouseEventArgs e)
@@ -170,14 +170,6 @@ namespace toolkit
 		}
 		void AddToolStripMenuItemClick(object sender, EventArgs e)
 		{
-			if (fileOpen.ShowDialog() == DialogResult.OK){
-				string path = fileOpen.FileName;
-				
-			}
-		}
-		void ListView1SelectedIndexChanged(object sender, EventArgs e)
-		{
-	
 		}
 		void ListView1Click(object sender, EventArgs e)
 		{
@@ -211,6 +203,14 @@ namespace toolkit
 		void TabsMouseLeave(object sender, EventArgs e)
 		{
 			mouseDown = false;
+		}
+		bool dialog = false;
+		void Button2Click(object sender, EventArgs e)
+		{
+			dialog = true;
+			Form f = new sourcesPortable();
+			f.ShowDialog();
+			dialog = false;
 		}
 		
 	}

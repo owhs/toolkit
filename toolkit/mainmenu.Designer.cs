@@ -44,6 +44,7 @@ namespace toolkit
 		private System.Windows.Forms.CheckBox checkBox12;
 		private System.Windows.Forms.ToolStripMenuItem addToolStripMenuItem;
 		private System.Windows.Forms.Label footer;
+		private System.Windows.Forms.Button button2;
 		
 		/// <summary>
 		/// Disposes resources used by the form.
@@ -97,11 +98,13 @@ namespace toolkit
 			this.tabPage3 = new System.Windows.Forms.TabPage();
 			this.tabPage4 = new System.Windows.Forms.TabPage();
 			this.tabPage5 = new System.Windows.Forms.TabPage();
+			this.button2 = new System.Windows.Forms.Button();
 			this.fileOpen = new System.Windows.Forms.OpenFileDialog();
 			this.tabs.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			this.portableCTX.SuspendLayout();
 			this.tableLayoutPanel1.SuspendLayout();
+			this.tabPage5.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// tabs
@@ -158,7 +161,6 @@ namespace toolkit
 			this.listView1.Size = new System.Drawing.Size(560, 431);
 			this.listView1.TabIndex = 4;
 			this.listView1.UseCompatibleStateImageBehavior = false;
-			this.listView1.SelectedIndexChanged += new System.EventHandler(this.ListView1SelectedIndexChanged);
 			this.listView1.Click += new System.EventHandler(this.ListView1Click);
 			this.listView1.DoubleClick += new System.EventHandler(this.ListView1DoubleClick);
 			// 
@@ -170,7 +172,7 @@ namespace toolkit
 			this.favouriteToolStripMenuItem,
 			this.addToolStripMenuItem});
 			this.portableCTX.Name = "portableCTX";
-			this.portableCTX.Size = new System.Drawing.Size(252, 94);
+			this.portableCTX.Size = new System.Drawing.Size(252, 127);
 			this.portableCTX.Opening += new System.ComponentModel.CancelEventHandler(this.PortableCTXOpening);
 			// 
 			// runAsAdministratorToolStripMenuItem
@@ -515,12 +517,32 @@ namespace toolkit
 			// tabPage5
 			// 
 			this.tabPage5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+			this.tabPage5.Controls.Add(this.button2);
 			this.tabPage5.Location = new System.Drawing.Point(4, 117);
 			this.tabPage5.Name = "tabPage5";
 			this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
 			this.tabPage5.Size = new System.Drawing.Size(566, 572);
 			this.tabPage5.TabIndex = 4;
 			this.tabPage5.Text = "Options";
+			// 
+			// button2
+			// 
+			this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+			this.button2.Dock = System.Windows.Forms.DockStyle.Top;
+			this.button2.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+			this.button2.FlatAppearance.BorderSize = 0;
+			this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(65)))), ((int)(((byte)(65)))));
+			this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(63)))));
+			this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+			this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
+			this.button2.Location = new System.Drawing.Point(3, 3);
+			this.button2.Name = "button2";
+			this.button2.Size = new System.Drawing.Size(560, 58);
+			this.button2.TabIndex = 4;
+			this.button2.Text = "Portable Source";
+			this.button2.UseVisualStyleBackColor = false;
+			this.button2.Click += new System.EventHandler(this.Button2Click);
 			// 
 			// fileOpen
 			// 
@@ -555,6 +577,7 @@ namespace toolkit
 			this.tabPage1.PerformLayout();
 			this.portableCTX.ResumeLayout(false);
 			this.tableLayoutPanel1.ResumeLayout(false);
+			this.tabPage5.ResumeLayout(false);
 			this.ResumeLayout(false);
 
 		}
