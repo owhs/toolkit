@@ -14,7 +14,7 @@ namespace toolkit
 		/// Designer variable used to keep track of non-visual components.
 		/// </summary>
 		private System.ComponentModel.IContainer components = null;
-		private toolkit.CustomTabControl tabControl1;
+		private toolkit.CustomTabControl tabs;
 		private System.Windows.Forms.TabPage tabPage1;
 		private System.Windows.Forms.TabPage tabPage2;
 		private System.Windows.Forms.TextBox textBox1;
@@ -43,7 +43,6 @@ namespace toolkit
 		private System.Windows.Forms.OpenFileDialog fileOpen;
 		private System.Windows.Forms.CheckBox checkBox12;
 		private System.Windows.Forms.ToolStripMenuItem addToolStripMenuItem;
-		private System.Windows.Forms.ToolTip toolTip1;
 		private System.Windows.Forms.Label footer;
 		
 		/// <summary>
@@ -69,7 +68,7 @@ namespace toolkit
 		{
 			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainmenu));
-			this.tabControl1 = new toolkit.CustomTabControl();
+			this.tabs = new toolkit.CustomTabControl();
 			this.tabPage1 = new System.Windows.Forms.TabPage();
 			this.listView1 = new System.Windows.Forms.ListView();
 			this.portableCTX = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -99,35 +98,38 @@ namespace toolkit
 			this.tabPage4 = new System.Windows.Forms.TabPage();
 			this.tabPage5 = new System.Windows.Forms.TabPage();
 			this.fileOpen = new System.Windows.Forms.OpenFileDialog();
-			this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-			this.tabControl1.SuspendLayout();
+			this.tabs.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			this.portableCTX.SuspendLayout();
 			this.tableLayoutPanel1.SuspendLayout();
 			this.SuspendLayout();
 			// 
-			// tabControl1
+			// tabs
 			// 
-			this.tabControl1.Appearance = System.Windows.Forms.TabAppearance.Buttons;
-			this.tabControl1.Controls.Add(this.tabPage1);
-			this.tabControl1.Controls.Add(this.tabPage2);
-			this.tabControl1.Controls.Add(this.tabPage3);
-			this.tabControl1.Controls.Add(this.tabPage4);
-			this.tabControl1.Controls.Add(this.tabPage5);
-			this.tabControl1.Cursor = System.Windows.Forms.Cursors.Default;
-			this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.tabControl1.Font = new System.Drawing.Font("Open Sans", 12F);
-			this.tabControl1.Location = new System.Drawing.Point(0, 0);
-			this.tabControl1.Multiline = true;
-			this.tabControl1.Name = "tabControl1";
-			this.tabControl1.Padding = new System.Drawing.Point(6, 10);
-			this.tabControl1.SelectedIndex = 0;
-			this.tabControl1.SelectTabColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(130)))), ((int)(((byte)(0)))));
-			this.tabControl1.SelectTabLineColor = System.Drawing.Color.Empty;
-			this.tabControl1.Size = new System.Drawing.Size(574, 693);
-			this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
-			this.tabControl1.TabColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(100)))), ((int)(((byte)(55)))));
-			this.tabControl1.TabIndex = 1;
+			this.tabs.Appearance = System.Windows.Forms.TabAppearance.Buttons;
+			this.tabs.Controls.Add(this.tabPage1);
+			this.tabs.Controls.Add(this.tabPage2);
+			this.tabs.Controls.Add(this.tabPage3);
+			this.tabs.Controls.Add(this.tabPage4);
+			this.tabs.Controls.Add(this.tabPage5);
+			this.tabs.Cursor = System.Windows.Forms.Cursors.Default;
+			this.tabs.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.tabs.Font = new System.Drawing.Font("Open Sans", 12F);
+			this.tabs.Location = new System.Drawing.Point(0, 0);
+			this.tabs.Multiline = true;
+			this.tabs.Name = "tabs";
+			this.tabs.Padding = new System.Drawing.Point(6, 10);
+			this.tabs.SelectedIndex = 0;
+			this.tabs.SelectTabColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(130)))), ((int)(((byte)(0)))));
+			this.tabs.SelectTabLineColor = System.Drawing.Color.Empty;
+			this.tabs.Size = new System.Drawing.Size(574, 693);
+			this.tabs.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
+			this.tabs.TabColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(100)))), ((int)(((byte)(55)))));
+			this.tabs.TabIndex = 1;
+			this.tabs.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TabsMouseDown);
+			this.tabs.MouseLeave += new System.EventHandler(this.TabsMouseLeave);
+			this.tabs.MouseMove += new System.Windows.Forms.MouseEventHandler(this.TabsMouseMove);
+			this.tabs.MouseUp += new System.Windows.Forms.MouseEventHandler(this.TabsMouseUp);
 			// 
 			// tabPage1
 			// 
@@ -218,7 +220,7 @@ namespace toolkit
 			// 
 			this.footer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
 			this.footer.Dock = System.Windows.Forms.DockStyle.Bottom;
-			this.footer.Font = new System.Drawing.Font("Open Sans", 8F);
+			this.footer.Font = new System.Drawing.Font("Open Sans", 10F);
 			this.footer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
 			this.footer.Location = new System.Drawing.Point(3, 546);
 			this.footer.Name = "footer";
@@ -530,21 +532,25 @@ namespace toolkit
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.Black;
 			this.ClientSize = new System.Drawing.Size(574, 693);
-			this.Controls.Add(this.tabControl1);
+			this.Controls.Add(this.tabs);
 			this.DoubleBuffered = true;
-			this.Font = new System.Drawing.Font("Open Sans", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+			this.Font = new System.Drawing.Font("Open Sans", 8F);
+			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.MaximizeBox = false;
 			this.MinimizeBox = false;
 			this.Name = "mainmenu";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Oscar\'s Toolkit";
+			this.TopMost = true;
 			this.Deactivate += new System.EventHandler(this.MainmenuDeactivate);
 			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainmenuFormClosing);
 			this.Load += new System.EventHandler(this.MainmenuLoad);
-			this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MainmenuMouseDown);
-			this.tabControl1.ResumeLayout(false);
+			this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TabsMouseDown);
+			this.MouseLeave += new System.EventHandler(this.TabsMouseLeave);
+			this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.TabsMouseMove);
+			this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.TabsMouseUp);
+			this.tabs.ResumeLayout(false);
 			this.tabPage1.ResumeLayout(false);
 			this.tabPage1.PerformLayout();
 			this.portableCTX.ResumeLayout(false);

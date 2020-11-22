@@ -27,28 +27,25 @@ namespace toolkit
 			// The InitializeComponent() call is required for Windows Forms designer support.
 			//
 			InitializeComponent();
-			
+			this.FormBorderStyle = FormBorderStyle.None;
 			//
 			// TODO: Add constructor code after the InitializeComponent() call.
 			//
 		}
 		void MainmenuFormClosing(object sender, FormClosingEventArgs e)
 		{
-			Application.Exit();
+			//Application.Exit();
+			e.Cancel=true;
+			this.Hide();
 		}
 		void MainmenuDeactivate(object sender, EventArgs e)
 		{
-			//this.Close();
+			this.Close();
 		}
-		void ListView1MouseUp(object sender, MouseEventArgs e)
-		{
-			/*if (listView1.FocusedItem.Checked) listView1.FocusedItem.Checked = false;
-			else listView1.FocusedItem.Checked = true;
-			tabControl1.Focus();*/
-		}
+		
 		void MainmenuMouseDown(object sender, MouseEventArgs e)
 		{
-			//Console.WriteLine(this.Focused);
+			MessageBox.Show("mmmain");
 		}
 		
 		Array lines;
@@ -56,8 +53,6 @@ namespace toolkit
 		
 		void MainmenuLoad(object sender, EventArgs e)
 		{
-			//this.FormBorderStyle = FormBorderStyle.None;
-			
 			footer.Text = "";
 			
 			string sp = Application.StartupPath+"\\config.csv";
@@ -87,9 +82,6 @@ namespace toolkit
 		}
 		void ListView1DoubleClick(object sender, EventArgs e)
 		{
-			//MessageBox.Show(listView1.SelectedItems[0].ToolTipText);
-			//MessageBox.Show(listView1.SelectedItems[0].Tag.ToString());
-			//MessageBox.Show(listView1.SelectedItems.Count.ToString());
 			Process p = new Process();
 			p.StartInfo.FileName = listView1.SelectedItems[0].ToolTipText;
 			try{
@@ -108,7 +100,7 @@ namespace toolkit
 		}
 		void FavouriteToolStripMenuItemClick(object sender, EventArgs e)
 		{
-	
+			
 		}
 		void TextBox1MouseDown(object sender, MouseEventArgs e)
 		{
@@ -192,6 +184,33 @@ namespace toolkit
 			if (listView1.SelectedItems.Count>0 && listView1.SelectedItems[0].Tag!=null){
 				footer.Text=listView1.SelectedItems[0].Tag.ToString();
 			} else footer.Text="";
+		}
+		
+		private bool mouseDown;
+		private Point lastLocation;
+		
+		void TabsMouseDown(object sender, MouseEventArgs e)
+		{
+	        mouseDown = true;
+	        lastLocation = e.Location;
+		}
+		void TabsMouseMove(object sender, MouseEventArgs e)
+		{
+	        if(mouseDown)
+	        {
+	            this.Location = new Point(
+	                (this.Location.X - lastLocation.X) + e.X, (this.Location.Y - lastLocation.Y) + e.Y);
+	
+	            this.Update();
+	        }
+		}
+		void TabsMouseUp(object sender, MouseEventArgs e)
+		{
+			mouseDown = false;
+		}
+		void TabsMouseLeave(object sender, EventArgs e)
+		{
+			mouseDown = false;
 		}
 		
 	}

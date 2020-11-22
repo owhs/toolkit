@@ -85,11 +85,14 @@ namespace toolkit
 		private void menuExitClick(object sender, EventArgs e)
 		{
 			Application.Exit();
+			Environment.Exit(1);
 		}
 		private void IconDoubleClick(object sender, EventArgs e)
 		{
 			if (f.Visible) f.Hide();
-			else f.Show();
+			else {
+				f.Show();
+			}
 		}
 		#endregion
 	}
