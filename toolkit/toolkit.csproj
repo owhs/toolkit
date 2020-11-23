@@ -66,6 +66,10 @@
     <Compile Include="sourcesPortable.Designer.cs">
       <DependentUpon>sourcesPortable.cs</DependentUpon>
     </Compile>
+    <Compile Include="browser.cs" />
+    <Compile Include="browser.Designer.cs">
+      <DependentUpon>browser.cs</DependentUpon>
+    </Compile>
     <Compile Include="WinShellAPI.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -77,6 +81,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="sourcesPortable.resx">
       <DependentUpon>sourcesPortable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="browser.resx">
+      <DependentUpon>browser.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

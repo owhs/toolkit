@@ -10,3 +10,6 @@ MultiBootUSB,\data\portable\hdd\multibootusb\multibootusb.exe,hdd
 RegOrganiser,\data\portable\misc\AppNee.com.Reg.Organizer.v8.29.Portable.FR\RegOrganizerPortable.exe,misc
 EXE Explorer,\data\portable\pe tools\MiTeC EXE Explorer\EXE.exe,pe tools
 SpyMe Tools,\data\portable\analysis\SpyMe Tools\SpyMeTools.exe,analysis,Filesystem / Reg - before & after snapshot comparison tool
+Visual Basic 6,data\portable\dev\VB6\Visual Basic 6 Portable.exe,dev,
+WSCC,data\portable\suites\WSCCPortable\wsccportable.exe,suite,Nirsoft & SysInternals Control
+FileActivityWatch,data\portable\suites\WSCCPortable\App\WSCC\NirSoft Utilities\x64\FileActivityWatch.exe,analysis,

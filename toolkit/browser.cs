@@ -9,15 +9,17 @@
 using System;
 using System.Drawing;
 using System.Windows.Forms;
+using System.IO;
 
 namespace toolkit
 {
+	
 	/// <summary>
 	/// Description of sourcesPortable.
 	/// </summary>
-	public partial class sourcesPortable : Form
+	public partial class browser : Form
 	{
-		public sourcesPortable()
+		public browser()
 		{
 			//
 			// The InitializeComponent() call is required for Windows Forms designer support.
@@ -28,7 +30,10 @@ namespace toolkit
 			// TODO: Add constructor code after the InitializeComponent() call.
 			//
 			this.FormBorderStyle = FormBorderStyle.None;
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainmenu));
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 		}
+		
 		
 		/*
 		 * 
@@ -71,33 +76,31 @@ namespace toolkit
 		void SourcesPortableLoad(object sender, EventArgs e)
 		{
 			string sp = Application.StartupPath+"\\config.csv";
-			drive = sp.Split('\\')[0]+"\\";
-			
-			fileOpen.InitialDirectory = drive + "\\data\\portable";
-			
-			
-			StreamReader sr = new StreamReader(sp);
-			textBox1.Text = sr.ReadToEnd();
-			sr.Close();
+			drive = sp.Split('\\')[0]+"\\";			
 		}
 		void Button1Click(object sender, EventArgs e)
 		{
+			mainmenu.Instance.Show();
 			this.Close();
 		}
+				
 		void Button2Click(object sender, EventArgs e)
 		{
 			if (this.WindowState == FormWindowState.Maximized){
 				this.WindowState = FormWindowState.Normal;
+				panel1.Padding = new Padding(3);
+			} else {
+				this.WindowState = FormWindowState.Maximized;
+				panel1.Padding = new Padding(0);
 			}
-			else this.WindowState = FormWindowState.Maximized;
 		}
 		void Label1DoubleClick(object sender, EventArgs e)
 		{
 			button2.PerformClick();
 		}
-		void Button3Click(object sender, EventArgs e)
+		void WebBrowser1DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
 		{
-			
+			textBox1.Text = webBrowser1.Url.AbsoluteUri;
 		}
 		
 	}

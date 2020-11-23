@@ -20,8 +20,12 @@ namespace toolkit
 		private NotifyIcon notifyIcon;
 		private ContextMenu notificationMenu;
 		
-		Form f = new mainmenu();
+		//Form f = new mainmenu();
 		
+		//public static int webServiceId {get; set;}
+
+		public static Form f {get; set;}
+				
 		#region Initialize icon and menu
 		public NotificationIcon()
 		{
@@ -40,7 +44,8 @@ namespace toolkit
 			notifyIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			
 			notifyIcon.ContextMenu = notificationMenu;
-					f.Show();
+			f = new mainmenu();
+			f.Show();
 			
 		}
 		

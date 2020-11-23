@@ -45,6 +45,9 @@ namespace toolkit
 		private System.Windows.Forms.ToolStripMenuItem addToolStripMenuItem;
 		private System.Windows.Forms.Label footer;
 		private System.Windows.Forms.Button button2;
+		private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+		private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+		private System.Windows.Forms.Button button1;
 		
 		/// <summary>
 		/// Disposes resources used by the form.
@@ -70,6 +73,8 @@ namespace toolkit
 			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainmenu));
 			this.tabs = new toolkit.CustomTabControl();
+			this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+			this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.tabPage1 = new System.Windows.Forms.TabPage();
 			this.listView1 = new System.Windows.Forms.ListView();
 			this.portableCTX = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -98,9 +103,11 @@ namespace toolkit
 			this.tabPage3 = new System.Windows.Forms.TabPage();
 			this.tabPage4 = new System.Windows.Forms.TabPage();
 			this.tabPage5 = new System.Windows.Forms.TabPage();
+			this.button1 = new System.Windows.Forms.Button();
 			this.button2 = new System.Windows.Forms.Button();
 			this.fileOpen = new System.Windows.Forms.OpenFileDialog();
 			this.tabs.SuspendLayout();
+			this.contextMenuStrip1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			this.portableCTX.SuspendLayout();
 			this.tableLayoutPanel1.SuspendLayout();
@@ -110,6 +117,7 @@ namespace toolkit
 			// tabs
 			// 
 			this.tabs.Appearance = System.Windows.Forms.TabAppearance.Buttons;
+			this.tabs.ContextMenuStrip = this.contextMenuStrip1;
 			this.tabs.Controls.Add(this.tabPage1);
 			this.tabs.Controls.Add(this.tabPage2);
 			this.tabs.Controls.Add(this.tabPage3);
@@ -125,7 +133,7 @@ namespace toolkit
 			this.tabs.SelectedIndex = 0;
 			this.tabs.SelectTabColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(130)))), ((int)(((byte)(0)))));
 			this.tabs.SelectTabLineColor = System.Drawing.Color.Empty;
-			this.tabs.Size = new System.Drawing.Size(516, 722);
+			this.tabs.Size = new System.Drawing.Size(556, 723);
 			this.tabs.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
 			this.tabs.TabColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(100)))), ((int)(((byte)(55)))));
 			this.tabs.TabIndex = 1;
@@ -134,6 +142,21 @@ namespace toolkit
 			this.tabs.MouseMove += new System.Windows.Forms.MouseEventHandler(this.TabsMouseMove);
 			this.tabs.MouseUp += new System.Windows.Forms.MouseEventHandler(this.TabsMouseUp);
 			// 
+			// contextMenuStrip1
+			// 
+			this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
+			this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+			this.exitToolStripMenuItem});
+			this.contextMenuStrip1.Name = "portableCTX";
+			this.contextMenuStrip1.Size = new System.Drawing.Size(112, 34);
+			// 
+			// exitToolStripMenuItem
+			// 
+			this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+			this.exitToolStripMenuItem.Size = new System.Drawing.Size(111, 30);
+			this.exitToolStripMenuItem.Text = "E&xit";
+			this.exitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItemClick);
+			// 
 			// tabPage1
 			// 
 			this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
@@ -141,10 +164,10 @@ namespace toolkit
 			this.tabPage1.Controls.Add(this.footer);
 			this.tabPage1.Controls.Add(this.tableLayoutPanel1);
 			this.tabPage1.Controls.Add(this.textBox1);
-			this.tabPage1.Location = new System.Drawing.Point(4, 91);
+			this.tabPage1.Location = new System.Drawing.Point(4, 111);
 			this.tabPage1.Name = "tabPage1";
 			this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage1.Size = new System.Drawing.Size(508, 627);
+			this.tabPage1.Size = new System.Drawing.Size(548, 608);
 			this.tabPage1.TabIndex = 0;
 			this.tabPage1.Text = "Portable";
 			// 
@@ -158,7 +181,7 @@ namespace toolkit
 			this.listView1.LargeImageList = this.pItems;
 			this.listView1.Location = new System.Drawing.Point(3, 112);
 			this.listView1.Name = "listView1";
-			this.listView1.Size = new System.Drawing.Size(502, 489);
+			this.listView1.Size = new System.Drawing.Size(542, 470);
 			this.listView1.TabIndex = 4;
 			this.listView1.UseCompatibleStateImageBehavior = false;
 			this.listView1.Click += new System.EventHandler(this.ListView1Click);
@@ -210,7 +233,7 @@ namespace toolkit
 			this.addToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F);
 			this.addToolStripMenuItem.Name = "addToolStripMenuItem";
 			this.addToolStripMenuItem.Size = new System.Drawing.Size(251, 30);
-			this.addToolStripMenuItem.Text = "Edit Source";
+			this.addToolStripMenuItem.Text = "Edit Sources";
 			this.addToolStripMenuItem.Click += new System.EventHandler(this.AddToolStripMenuItemClick);
 			// 
 			// pItems
@@ -225,9 +248,9 @@ namespace toolkit
 			this.footer.Dock = System.Windows.Forms.DockStyle.Bottom;
 			this.footer.Font = new System.Drawing.Font("Open Sans", 9F);
 			this.footer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
-			this.footer.Location = new System.Drawing.Point(3, 601);
+			this.footer.Location = new System.Drawing.Point(3, 582);
 			this.footer.Name = "footer";
-			this.footer.Size = new System.Drawing.Size(502, 23);
+			this.footer.Size = new System.Drawing.Size(542, 23);
 			this.footer.TabIndex = 3;
 			this.footer.Text = "footer text";
 			this.footer.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -242,6 +265,7 @@ namespace toolkit
 			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
 			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
 			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+			this.tableLayoutPanel1.ContextMenuStrip = this.portableCTX;
 			this.tableLayoutPanel1.Controls.Add(this.checkBox12, 0, 2);
 			this.tableLayoutPanel1.Controls.Add(this.checkBox11, 4, 2);
 			this.tableLayoutPanel1.Controls.Add(this.checkBox10, 3, 2);
@@ -263,7 +287,7 @@ namespace toolkit
 			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 5F));
 			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
 			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-			this.tableLayoutPanel1.Size = new System.Drawing.Size(502, 72);
+			this.tableLayoutPanel1.Size = new System.Drawing.Size(542, 72);
 			this.tableLayoutPanel1.TabIndex = 1;
 			// 
 			// checkBox12
@@ -277,7 +301,7 @@ namespace toolkit
 			this.checkBox12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.checkBox12.Location = new System.Drawing.Point(3, 41);
 			this.checkBox12.Name = "checkBox12";
-			this.checkBox12.Size = new System.Drawing.Size(77, 28);
+			this.checkBox12.Size = new System.Drawing.Size(84, 28);
 			this.checkBox12.TabIndex = 14;
 			this.checkBox12.Text = "hdd";
 			this.checkBox12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -293,9 +317,9 @@ namespace toolkit
 			this.checkBox11.FlatAppearance.BorderSize = 0;
 			this.checkBox11.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(66)))), ((int)(((byte)(33)))));
 			this.checkBox11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.checkBox11.Location = new System.Drawing.Point(418, 41);
+			this.checkBox11.Location = new System.Drawing.Point(453, 41);
 			this.checkBox11.Name = "checkBox11";
-			this.checkBox11.Size = new System.Drawing.Size(81, 28);
+			this.checkBox11.Size = new System.Drawing.Size(86, 28);
 			this.checkBox11.TabIndex = 13;
 			this.checkBox11.Text = "setup";
 			this.checkBox11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -311,9 +335,9 @@ namespace toolkit
 			this.checkBox10.FlatAppearance.BorderSize = 0;
 			this.checkBox10.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(66)))), ((int)(((byte)(33)))));
 			this.checkBox10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.checkBox10.Location = new System.Drawing.Point(335, 41);
+			this.checkBox10.Location = new System.Drawing.Point(363, 41);
 			this.checkBox10.Name = "checkBox10";
-			this.checkBox10.Size = new System.Drawing.Size(77, 28);
+			this.checkBox10.Size = new System.Drawing.Size(84, 28);
 			this.checkBox10.TabIndex = 12;
 			this.checkBox10.Text = "analysis";
 			this.checkBox10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -329,9 +353,9 @@ namespace toolkit
 			this.checkBox9.FlatAppearance.BorderSize = 0;
 			this.checkBox9.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(66)))), ((int)(((byte)(33)))));
 			this.checkBox9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.checkBox9.Location = new System.Drawing.Point(252, 41);
+			this.checkBox9.Location = new System.Drawing.Point(273, 41);
 			this.checkBox9.Name = "checkBox9";
-			this.checkBox9.Size = new System.Drawing.Size(77, 28);
+			this.checkBox9.Size = new System.Drawing.Size(84, 28);
 			this.checkBox9.TabIndex = 11;
 			this.checkBox9.Text = "graphics";
 			this.checkBox9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -347,9 +371,9 @@ namespace toolkit
 			this.checkBox8.FlatAppearance.BorderSize = 0;
 			this.checkBox8.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(66)))), ((int)(((byte)(33)))));
 			this.checkBox8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.checkBox8.Location = new System.Drawing.Point(169, 41);
+			this.checkBox8.Location = new System.Drawing.Point(183, 41);
 			this.checkBox8.Name = "checkBox8";
-			this.checkBox8.Size = new System.Drawing.Size(77, 28);
+			this.checkBox8.Size = new System.Drawing.Size(84, 28);
 			this.checkBox8.TabIndex = 10;
 			this.checkBox8.Text = "network";
 			this.checkBox8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -365,9 +389,9 @@ namespace toolkit
 			this.checkBox7.FlatAppearance.BorderSize = 0;
 			this.checkBox7.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(66)))), ((int)(((byte)(33)))));
 			this.checkBox7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.checkBox7.Location = new System.Drawing.Point(86, 41);
+			this.checkBox7.Location = new System.Drawing.Point(93, 41);
 			this.checkBox7.Name = "checkBox7";
-			this.checkBox7.Size = new System.Drawing.Size(77, 28);
+			this.checkBox7.Size = new System.Drawing.Size(84, 28);
 			this.checkBox7.TabIndex = 9;
 			this.checkBox7.Text = "pe tools";
 			this.checkBox7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -383,9 +407,9 @@ namespace toolkit
 			this.checkBox6.FlatAppearance.BorderSize = 0;
 			this.checkBox6.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(66)))), ((int)(((byte)(33)))));
 			this.checkBox6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.checkBox6.Location = new System.Drawing.Point(418, 8);
+			this.checkBox6.Location = new System.Drawing.Point(453, 8);
 			this.checkBox6.Name = "checkBox6";
-			this.checkBox6.Size = new System.Drawing.Size(81, 27);
+			this.checkBox6.Size = new System.Drawing.Size(86, 27);
 			this.checkBox6.TabIndex = 8;
 			this.checkBox6.Text = "security";
 			this.checkBox6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -401,9 +425,9 @@ namespace toolkit
 			this.checkBox5.FlatAppearance.BorderSize = 0;
 			this.checkBox5.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(66)))), ((int)(((byte)(33)))));
 			this.checkBox5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.checkBox5.Location = new System.Drawing.Point(335, 8);
+			this.checkBox5.Location = new System.Drawing.Point(363, 8);
 			this.checkBox5.Name = "checkBox5";
-			this.checkBox5.Size = new System.Drawing.Size(77, 27);
+			this.checkBox5.Size = new System.Drawing.Size(84, 27);
 			this.checkBox5.TabIndex = 7;
 			this.checkBox5.Text = "dev";
 			this.checkBox5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -419,9 +443,9 @@ namespace toolkit
 			this.checkBox4.FlatAppearance.BorderSize = 0;
 			this.checkBox4.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(66)))), ((int)(((byte)(33)))));
 			this.checkBox4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.checkBox4.Location = new System.Drawing.Point(252, 8);
+			this.checkBox4.Location = new System.Drawing.Point(273, 8);
 			this.checkBox4.Name = "checkBox4";
-			this.checkBox4.Size = new System.Drawing.Size(77, 27);
+			this.checkBox4.Size = new System.Drawing.Size(84, 27);
 			this.checkBox4.TabIndex = 6;
 			this.checkBox4.Text = "suite";
 			this.checkBox4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -437,9 +461,9 @@ namespace toolkit
 			this.checkBox3.FlatAppearance.BorderSize = 0;
 			this.checkBox3.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(66)))), ((int)(((byte)(33)))));
 			this.checkBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.checkBox3.Location = new System.Drawing.Point(169, 8);
+			this.checkBox3.Location = new System.Drawing.Point(183, 8);
 			this.checkBox3.Name = "checkBox3";
-			this.checkBox3.Size = new System.Drawing.Size(77, 27);
+			this.checkBox3.Size = new System.Drawing.Size(84, 27);
 			this.checkBox3.TabIndex = 5;
 			this.checkBox3.Text = "misc";
 			this.checkBox3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -455,9 +479,9 @@ namespace toolkit
 			this.checkBox2.FlatAppearance.BorderSize = 0;
 			this.checkBox2.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(66)))), ((int)(((byte)(33)))));
 			this.checkBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.checkBox2.Location = new System.Drawing.Point(86, 8);
+			this.checkBox2.Location = new System.Drawing.Point(93, 8);
 			this.checkBox2.Name = "checkBox2";
-			this.checkBox2.Size = new System.Drawing.Size(77, 27);
+			this.checkBox2.Size = new System.Drawing.Size(84, 27);
 			this.checkBox2.TabIndex = 4;
 			this.checkBox2.Text = "useful";
 			this.checkBox2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -475,7 +499,7 @@ namespace toolkit
 			this.checkBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.checkBox1.Location = new System.Drawing.Point(3, 8);
 			this.checkBox1.Name = "checkBox1";
-			this.checkBox1.Size = new System.Drawing.Size(77, 27);
+			this.checkBox1.Size = new System.Drawing.Size(84, 27);
 			this.checkBox1.TabIndex = 3;
 			this.checkBox1.Text = "common";
 			this.checkBox1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -490,54 +514,75 @@ namespace toolkit
 			this.textBox1.ForeColor = System.Drawing.Color.LightGray;
 			this.textBox1.Location = new System.Drawing.Point(3, 3);
 			this.textBox1.Name = "textBox1";
-			this.textBox1.Size = new System.Drawing.Size(502, 37);
+			this.textBox1.Size = new System.Drawing.Size(542, 37);
 			this.textBox1.TabIndex = 0;
-			this.textBox1.Text = "Search...";
+			this.textBox1.Text = "  Search...";
 			this.textBox1.TextChanged += new System.EventHandler(this.TextBox1TextChanged);
 			this.textBox1.Enter += new System.EventHandler(this.TextBox1Enter);
+			this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBox1KeyPress);
 			this.textBox1.Leave += new System.EventHandler(this.TextBox1Leave);
 			this.textBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TextBox1MouseDown);
 			// 
 			// tabPage2
 			// 
 			this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-			this.tabPage2.Location = new System.Drawing.Point(4, 46);
+			this.tabPage2.Location = new System.Drawing.Point(4, 111);
 			this.tabPage2.Name = "tabPage2";
 			this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage2.Size = new System.Drawing.Size(508, 672);
+			this.tabPage2.Size = new System.Drawing.Size(548, 608);
 			this.tabPage2.TabIndex = 1;
 			this.tabPage2.Text = "Installers";
 			// 
 			// tabPage3
 			// 
 			this.tabPage3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-			this.tabPage3.Location = new System.Drawing.Point(4, 46);
+			this.tabPage3.Location = new System.Drawing.Point(4, 111);
 			this.tabPage3.Name = "tabPage3";
 			this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage3.Size = new System.Drawing.Size(508, 672);
+			this.tabPage3.Size = new System.Drawing.Size(548, 608);
 			this.tabPage3.TabIndex = 2;
 			this.tabPage3.Text = "Scripts";
 			// 
 			// tabPage4
 			// 
 			this.tabPage4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-			this.tabPage4.Location = new System.Drawing.Point(4, 91);
+			this.tabPage4.Location = new System.Drawing.Point(4, 111);
 			this.tabPage4.Name = "tabPage4";
 			this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage4.Size = new System.Drawing.Size(508, 627);
+			this.tabPage4.Size = new System.Drawing.Size(548, 608);
 			this.tabPage4.TabIndex = 3;
 			this.tabPage4.Text = "BootCD";
 			// 
 			// tabPage5
 			// 
 			this.tabPage5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
+			this.tabPage5.Controls.Add(this.button1);
 			this.tabPage5.Controls.Add(this.button2);
-			this.tabPage5.Location = new System.Drawing.Point(4, 91);
+			this.tabPage5.Location = new System.Drawing.Point(4, 111);
 			this.tabPage5.Name = "tabPage5";
 			this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage5.Size = new System.Drawing.Size(508, 627);
+			this.tabPage5.Size = new System.Drawing.Size(548, 608);
 			this.tabPage5.TabIndex = 4;
 			this.tabPage5.Text = "Options";
+			// 
+			// button1
+			// 
+			this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+			this.button1.Dock = System.Windows.Forms.DockStyle.Top;
+			this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+			this.button1.FlatAppearance.BorderSize = 0;
+			this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+			this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
+			this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+			this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
+			this.button1.Location = new System.Drawing.Point(3, 61);
+			this.button1.Name = "button1";
+			this.button1.Size = new System.Drawing.Size(542, 58);
+			this.button1.TabIndex = 5;
+			this.button1.Text = "Browser";
+			this.button1.UseVisualStyleBackColor = false;
+			this.button1.Click += new System.EventHandler(this.Button1Click);
 			// 
 			// button2
 			// 
@@ -552,7 +597,7 @@ namespace toolkit
 			this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
 			this.button2.Location = new System.Drawing.Point(3, 3);
 			this.button2.Name = "button2";
-			this.button2.Size = new System.Drawing.Size(502, 58);
+			this.button2.Size = new System.Drawing.Size(542, 58);
 			this.button2.TabIndex = 4;
 			this.button2.Text = "Portable Source";
 			this.button2.UseVisualStyleBackColor = false;
@@ -567,11 +612,12 @@ namespace toolkit
 			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 22F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.Black;
-			this.ClientSize = new System.Drawing.Size(516, 722);
+			this.ClientSize = new System.Drawing.Size(556, 723);
+			this.ContextMenuStrip = this.contextMenuStrip1;
 			this.Controls.Add(this.tabs);
 			this.DoubleBuffered = true;
 			this.Font = new System.Drawing.Font("Open Sans", 8F);
-			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.MaximizeBox = false;
 			this.MinimizeBox = false;
@@ -590,6 +636,7 @@ namespace toolkit
 			this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.TabsMouseMove);
 			this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.TabsMouseUp);
 			this.tabs.ResumeLayout(false);
+			this.contextMenuStrip1.ResumeLayout(false);
 			this.tabPage1.ResumeLayout(false);
 			this.tabPage1.PerformLayout();
 			this.portableCTX.ResumeLayout(false);

@@ -185,4 +185,5 @@ namespace toolkit
             g.DrawString(customTabPage.Text, Font, brush, rectangleF, stringFormat);
         }
     }
+
 }
