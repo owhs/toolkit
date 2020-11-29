@@ -125,7 +125,7 @@ namespace toolkit
 			this.tabs.Controls.Add(this.tabPage5);
 			this.tabs.Cursor = System.Windows.Forms.Cursors.Default;
 			this.tabs.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.tabs.Font = new System.Drawing.Font("Open Sans", 11F);
+			this.tabs.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
 			this.tabs.Location = new System.Drawing.Point(0, 0);
 			this.tabs.Multiline = true;
 			this.tabs.Name = "tabs";
@@ -146,14 +146,14 @@ namespace toolkit
 			// 
 			this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
 			this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-			this.exitToolStripMenuItem});
+									this.exitToolStripMenuItem});
 			this.contextMenuStrip1.Name = "portableCTX";
-			this.contextMenuStrip1.Size = new System.Drawing.Size(112, 34);
+			this.contextMenuStrip1.Size = new System.Drawing.Size(103, 28);
 			// 
 			// exitToolStripMenuItem
 			// 
 			this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-			this.exitToolStripMenuItem.Size = new System.Drawing.Size(111, 30);
+			this.exitToolStripMenuItem.Size = new System.Drawing.Size(102, 24);
 			this.exitToolStripMenuItem.Text = "E&xit";
 			this.exitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItemClick);
 			// 
@@ -164,10 +164,10 @@ namespace toolkit
 			this.tabPage1.Controls.Add(this.footer);
 			this.tabPage1.Controls.Add(this.tableLayoutPanel1);
 			this.tabPage1.Controls.Add(this.textBox1);
-			this.tabPage1.Location = new System.Drawing.Point(4, 111);
+			this.tabPage1.Location = new System.Drawing.Point(4, 95);
 			this.tabPage1.Name = "tabPage1";
 			this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage1.Size = new System.Drawing.Size(548, 608);
+			this.tabPage1.Size = new System.Drawing.Size(548, 624);
 			this.tabPage1.TabIndex = 0;
 			this.tabPage1.Text = "Portable";
 			// 
@@ -179,9 +179,9 @@ namespace toolkit
 			this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.listView1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
 			this.listView1.LargeImageList = this.pItems;
-			this.listView1.Location = new System.Drawing.Point(3, 112);
+			this.listView1.Location = new System.Drawing.Point(3, 103);
 			this.listView1.Name = "listView1";
-			this.listView1.Size = new System.Drawing.Size(542, 470);
+			this.listView1.Size = new System.Drawing.Size(542, 495);
 			this.listView1.TabIndex = 4;
 			this.listView1.UseCompatibleStateImageBehavior = false;
 			this.listView1.Click += new System.EventHandler(this.ListView1Click);
@@ -191,40 +191,40 @@ namespace toolkit
 			// 
 			this.portableCTX.ImageScalingSize = new System.Drawing.Size(24, 24);
 			this.portableCTX.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-			this.runAsAdministratorToolStripMenuItem,
-			this.favouriteToolStripMenuItem,
-			this.addToolStripMenuItem});
+									this.runAsAdministratorToolStripMenuItem,
+									this.favouriteToolStripMenuItem,
+									this.addToolStripMenuItem});
 			this.portableCTX.Name = "portableCTX";
-			this.portableCTX.Size = new System.Drawing.Size(252, 94);
+			this.portableCTX.Size = new System.Drawing.Size(217, 76);
 			this.portableCTX.Opening += new System.ComponentModel.CancelEventHandler(this.PortableCTXOpening);
 			// 
 			// runAsAdministratorToolStripMenuItem
 			// 
 			this.runAsAdministratorToolStripMenuItem.Name = "runAsAdministratorToolStripMenuItem";
-			this.runAsAdministratorToolStripMenuItem.Size = new System.Drawing.Size(251, 30);
+			this.runAsAdministratorToolStripMenuItem.Size = new System.Drawing.Size(216, 24);
 			this.runAsAdministratorToolStripMenuItem.Text = "Run as Administrator";
 			// 
 			// favouriteToolStripMenuItem
 			// 
 			this.favouriteToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-			this.allToolStripMenuItem,
-			this.noneToolStripMenuItem});
+									this.allToolStripMenuItem,
+									this.noneToolStripMenuItem});
 			this.favouriteToolStripMenuItem.Name = "favouriteToolStripMenuItem";
-			this.favouriteToolStripMenuItem.Size = new System.Drawing.Size(251, 30);
+			this.favouriteToolStripMenuItem.Size = new System.Drawing.Size(216, 24);
 			this.favouriteToolStripMenuItem.Text = "Filter";
 			this.favouriteToolStripMenuItem.Click += new System.EventHandler(this.FavouriteToolStripMenuItemClick);
 			// 
 			// allToolStripMenuItem
 			// 
 			this.allToolStripMenuItem.Name = "allToolStripMenuItem";
-			this.allToolStripMenuItem.Size = new System.Drawing.Size(139, 30);
+			this.allToolStripMenuItem.Size = new System.Drawing.Size(114, 24);
 			this.allToolStripMenuItem.Text = "All";
 			this.allToolStripMenuItem.Click += new System.EventHandler(this.AllToolStripMenuItemClick);
 			// 
 			// noneToolStripMenuItem
 			// 
 			this.noneToolStripMenuItem.Name = "noneToolStripMenuItem";
-			this.noneToolStripMenuItem.Size = new System.Drawing.Size(139, 30);
+			this.noneToolStripMenuItem.Size = new System.Drawing.Size(114, 24);
 			this.noneToolStripMenuItem.Text = "None";
 			this.noneToolStripMenuItem.Click += new System.EventHandler(this.AllToolStripMenuItemClick);
 			// 
@@ -232,7 +232,7 @@ namespace toolkit
 			// 
 			this.addToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F);
 			this.addToolStripMenuItem.Name = "addToolStripMenuItem";
-			this.addToolStripMenuItem.Size = new System.Drawing.Size(251, 30);
+			this.addToolStripMenuItem.Size = new System.Drawing.Size(216, 24);
 			this.addToolStripMenuItem.Text = "Edit Sources";
 			this.addToolStripMenuItem.Click += new System.EventHandler(this.AddToolStripMenuItemClick);
 			// 
@@ -246,9 +246,9 @@ namespace toolkit
 			// 
 			this.footer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
 			this.footer.Dock = System.Windows.Forms.DockStyle.Bottom;
-			this.footer.Font = new System.Drawing.Font("Open Sans", 9F);
+			this.footer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
 			this.footer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
-			this.footer.Location = new System.Drawing.Point(3, 582);
+			this.footer.Location = new System.Drawing.Point(3, 598);
 			this.footer.Name = "footer";
 			this.footer.Size = new System.Drawing.Size(542, 23);
 			this.footer.TabIndex = 3;
@@ -279,9 +279,9 @@ namespace toolkit
 			this.tableLayoutPanel1.Controls.Add(this.checkBox2, 1, 1);
 			this.tableLayoutPanel1.Controls.Add(this.checkBox1, 0, 1);
 			this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-			this.tableLayoutPanel1.Font = new System.Drawing.Font("Open Sans", 10F);
+			this.tableLayoutPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
 			this.tableLayoutPanel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
-			this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 40);
+			this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 31);
 			this.tableLayoutPanel1.Name = "tableLayoutPanel1";
 			this.tableLayoutPanel1.RowCount = 3;
 			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 5F));
@@ -514,7 +514,7 @@ namespace toolkit
 			this.textBox1.ForeColor = System.Drawing.Color.LightGray;
 			this.textBox1.Location = new System.Drawing.Point(3, 3);
 			this.textBox1.Name = "textBox1";
-			this.textBox1.Size = new System.Drawing.Size(542, 37);
+			this.textBox1.Size = new System.Drawing.Size(542, 28);
 			this.textBox1.TabIndex = 0;
 			this.textBox1.Text = "  Search...";
 			this.textBox1.TextChanged += new System.EventHandler(this.TextBox1TextChanged);
@@ -526,30 +526,30 @@ namespace toolkit
 			// tabPage2
 			// 
 			this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-			this.tabPage2.Location = new System.Drawing.Point(4, 111);
+			this.tabPage2.Location = new System.Drawing.Point(4, 95);
 			this.tabPage2.Name = "tabPage2";
 			this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage2.Size = new System.Drawing.Size(548, 608);
+			this.tabPage2.Size = new System.Drawing.Size(548, 624);
 			this.tabPage2.TabIndex = 1;
 			this.tabPage2.Text = "Installers";
 			// 
 			// tabPage3
 			// 
 			this.tabPage3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-			this.tabPage3.Location = new System.Drawing.Point(4, 111);
+			this.tabPage3.Location = new System.Drawing.Point(4, 95);
 			this.tabPage3.Name = "tabPage3";
 			this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage3.Size = new System.Drawing.Size(548, 608);
+			this.tabPage3.Size = new System.Drawing.Size(548, 624);
 			this.tabPage3.TabIndex = 2;
 			this.tabPage3.Text = "Scripts";
 			// 
 			// tabPage4
 			// 
 			this.tabPage4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
-			this.tabPage4.Location = new System.Drawing.Point(4, 111);
+			this.tabPage4.Location = new System.Drawing.Point(4, 95);
 			this.tabPage4.Name = "tabPage4";
 			this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage4.Size = new System.Drawing.Size(548, 608);
+			this.tabPage4.Size = new System.Drawing.Size(548, 624);
 			this.tabPage4.TabIndex = 3;
 			this.tabPage4.Text = "BootCD";
 			// 
@@ -558,10 +558,10 @@ namespace toolkit
 			this.tabPage5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(55)))), ((int)(((byte)(55)))));
 			this.tabPage5.Controls.Add(this.button1);
 			this.tabPage5.Controls.Add(this.button2);
-			this.tabPage5.Location = new System.Drawing.Point(4, 111);
+			this.tabPage5.Location = new System.Drawing.Point(4, 95);
 			this.tabPage5.Name = "tabPage5";
 			this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage5.Size = new System.Drawing.Size(548, 608);
+			this.tabPage5.Size = new System.Drawing.Size(548, 624);
 			this.tabPage5.TabIndex = 4;
 			this.tabPage5.Text = "Options";
 			// 
@@ -609,14 +609,14 @@ namespace toolkit
 			// 
 			// mainmenu
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 22F);
+			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.Black;
 			this.ClientSize = new System.Drawing.Size(556, 723);
 			this.ContextMenuStrip = this.contextMenuStrip1;
 			this.Controls.Add(this.tabs);
 			this.DoubleBuffered = true;
-			this.Font = new System.Drawing.Font("Open Sans", 8F);
+			this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.MaximizeBox = false;
@@ -643,7 +643,6 @@ namespace toolkit
 			this.tableLayoutPanel1.ResumeLayout(false);
 			this.tabPage5.ResumeLayout(false);
 			this.ResumeLayout(false);
-
 		}
 	}
 }

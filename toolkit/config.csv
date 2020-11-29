@@ -13,3 +13,5 @@ SpyMe Tools,\data\portable\analysis\SpyMe Tools\SpyMeTools.exe,analysis,Filesyst
 Visual Basic 6,data\portable\dev\VB6\Visual Basic 6 Portable.exe,dev,
 WSCC,data\portable\suites\WSCCPortable\wsccportable.exe,suite,Nirsoft & SysInternals Control
 FileActivityWatch,data\portable\suites\WSCCPortable\App\WSCC\NirSoft Utilities\x64\FileActivityWatch.exe,analysis,
+ResEdit,data\portable\pe tools\ResEdit\ResEdit.exe,pe tools,
+ResourceHacker,data\portable\pe tools\ResourceHacker\ResourceHackerPortable.exe,pe tools,

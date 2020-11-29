@@ -9,6 +9,7 @@
 using System;
 using System.Drawing;
 using System.Windows.Forms;
+using System.IO;
 
 namespace toolkit
 {
@@ -67,14 +68,16 @@ namespace toolkit
 		}
 		
 		string drive = "";
+		string sp = "";
 		
 		void SourcesPortableLoad(object sender, EventArgs e)
 		{
-			string sp = Application.StartupPath+"\\config.csv";
+			sp = Application.StartupPath+"\\config.csv";
 			drive = sp.Split('\\')[0]+"\\";
 			
-			fileOpen.InitialDirectory = drive + "\\data\\portable";
+			fileOpen.InitialDirectory = drive + "data\\portable";
 			
+			//MessageBox.Show(drive + "data\\portable");
 			
 			StreamReader sr = new StreamReader(sp);
 			textBox1.Text = sr.ReadToEnd();
@@ -82,7 +85,8 @@ namespace toolkit
 		}
 		void Button1Click(object sender, EventArgs e)
 		{
-			this.Close();
+			//this.Close();
+			button4.PerformClick();
 		}
 		void Button2Click(object sender, EventArgs e)
 		{
@@ -97,8 +101,25 @@ namespace toolkit
 		}
 		void Button3Click(object sender, EventArgs e)
 		{
-			
+			if (fileOpen.ShowDialog() == DialogResult.OK){
+				string path = fileOpen.FileName.Replace(drive,"");
+				string[] spl = path.Split('\\');
+				
+				textBox1.Text += "\r\n" + spl[spl.Length-1].Split('.')[0] + "," + path + "," + spl[2] + ",";
+			}
 		}
 		
+		
+		void Button4Click(object sender, EventArgs e)
+		{
+			StreamWriter sw = new StreamWriter(sp);
+			sw.Flush();
+			sw.Write(textBox1.Text);
+			sw.Close();
+			
+			mainmenu.Instance.loadItems();
+			this.Close();
+			mainmenu.Instance.Show();
+		}
 	}
 }

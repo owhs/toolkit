@@ -251,10 +251,10 @@ namespace toolkit
 		bool dialog = false;
 		void Button2Click(object sender, EventArgs e)
 		{
-			dialog = true;
+			//dialog = true;
 			Form f = new sourcesPortable();
 			f.ShowDialog();
-			dialog = false;
+			//dialog = false;
 		}
 		void MainmenuActivated(object sender, EventArgs e)
 		{

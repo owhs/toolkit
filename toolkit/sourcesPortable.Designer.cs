@@ -72,9 +72,10 @@ namespace toolkit
 			this.panel1.Controls.Add(this.button1);
 			this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
 			this.panel1.Location = new System.Drawing.Point(0, 0);
+			this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.panel1.Name = "panel1";
-			this.panel1.Padding = new System.Windows.Forms.Padding(3);
-			this.panel1.Size = new System.Drawing.Size(1199, 64);
+			this.panel1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+			this.panel1.Size = new System.Drawing.Size(1471, 43);
 			this.panel1.TabIndex = 0;
 			this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TabsMouseDown);
 			this.panel1.MouseLeave += new System.EventHandler(this.TabsMouseLeave);
@@ -86,9 +87,9 @@ namespace toolkit
 			this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
 			this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
-			this.label1.Location = new System.Drawing.Point(3, 3);
+			this.label1.Location = new System.Drawing.Point(3, 2);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(1075, 58);
+			this.label1.Size = new System.Drawing.Size(1361, 39);
 			this.label1.TabIndex = 4;
 			this.label1.Text = "Portable Sources";
 			this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -109,9 +110,10 @@ namespace toolkit
 			this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
 			this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-			this.button2.Location = new System.Drawing.Point(1078, 3);
+			this.button2.Location = new System.Drawing.Point(1364, 2);
+			this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.button2.Name = "button2";
-			this.button2.Size = new System.Drawing.Size(59, 58);
+			this.button2.Size = new System.Drawing.Size(52, 39);
 			this.button2.TabIndex = 3;
 			this.button2.Text = "☐";
 			this.button2.UseVisualStyleBackColor = false;
@@ -127,9 +129,10 @@ namespace toolkit
 			this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
 			this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.button1.ForeColor = System.Drawing.Color.White;
-			this.button1.Location = new System.Drawing.Point(1137, 3);
+			this.button1.Location = new System.Drawing.Point(1416, 2);
+			this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(59, 58);
+			this.button1.Size = new System.Drawing.Size(52, 39);
 			this.button1.TabIndex = 2;
 			this.button1.Text = "x";
 			this.button1.UseVisualStyleBackColor = false;
@@ -144,12 +147,13 @@ namespace toolkit
 			this.tableLayoutPanel1.Controls.Add(this.button4, 0, 0);
 			this.tableLayoutPanel1.Controls.Add(this.button3, 0, 0);
 			this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-			this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 905);
+			this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 728);
+			this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.tableLayoutPanel1.Name = "tableLayoutPanel1";
 			this.tableLayoutPanel1.RowCount = 1;
 			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 59F));
-			this.tableLayoutPanel1.Size = new System.Drawing.Size(1199, 59);
+			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 43F));
+			this.tableLayoutPanel1.Size = new System.Drawing.Size(1471, 43);
 			this.tableLayoutPanel1.TabIndex = 7;
 			// 
 			// button4
@@ -163,12 +167,14 @@ namespace toolkit
 			this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
 			this.button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-			this.button4.Location = new System.Drawing.Point(602, 3);
+			this.button4.Location = new System.Drawing.Point(738, 2);
+			this.button4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.button4.Name = "button4";
-			this.button4.Size = new System.Drawing.Size(594, 53);
+			this.button4.Size = new System.Drawing.Size(730, 39);
 			this.button4.TabIndex = 7;
 			this.button4.Text = "Save";
 			this.button4.UseVisualStyleBackColor = false;
+			this.button4.Click += new System.EventHandler(this.Button4Click);
 			// 
 			// button3
 			// 
@@ -181,9 +187,10 @@ namespace toolkit
 			this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
 			this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(170)))), ((int)(((byte)(170)))), ((int)(((byte)(170)))));
-			this.button3.Location = new System.Drawing.Point(3, 3);
+			this.button3.Location = new System.Drawing.Point(3, 2);
+			this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.button3.Name = "button3";
-			this.button3.Size = new System.Drawing.Size(593, 53);
+			this.button3.Size = new System.Drawing.Size(729, 39);
 			this.button3.TabIndex = 6;
 			this.button3.Text = "Add";
 			this.button3.UseVisualStyleBackColor = false;
@@ -194,12 +201,16 @@ namespace toolkit
 			this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
 			this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.textBox1.Location = new System.Drawing.Point(0, 64);
+			this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+			this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+			this.textBox1.Location = new System.Drawing.Point(0, 43);
+			this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.textBox1.MaxLength = 12232767;
 			this.textBox1.Multiline = true;
 			this.textBox1.Name = "textBox1";
-			this.textBox1.Size = new System.Drawing.Size(1199, 841);
+			this.textBox1.Size = new System.Drawing.Size(1471, 685);
 			this.textBox1.TabIndex = 8;
+			this.textBox1.WordWrap = false;
 			// 
 			// fileOpen
 			// 
@@ -209,27 +220,28 @@ namespace toolkit
 			// 
 			this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
 			this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-			this.exitToolStripMenuItem});
+									this.exitToolStripMenuItem});
 			this.contextMenuStrip1.Name = "portableCTX";
-			this.contextMenuStrip1.Size = new System.Drawing.Size(112, 34);
+			this.contextMenuStrip1.Size = new System.Drawing.Size(103, 28);
 			// 
 			// exitToolStripMenuItem
 			// 
 			this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-			this.exitToolStripMenuItem.Size = new System.Drawing.Size(111, 30);
+			this.exitToolStripMenuItem.Size = new System.Drawing.Size(102, 24);
 			this.exitToolStripMenuItem.Text = "E&xit";
 			// 
 			// sourcesPortable
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-			this.ClientSize = new System.Drawing.Size(1199, 964);
+			this.ClientSize = new System.Drawing.Size(1471, 771);
 			this.Controls.Add(this.textBox1);
 			this.Controls.Add(this.tableLayoutPanel1);
 			this.Controls.Add(this.panel1);
 			this.DoubleBuffered = true;
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+			this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.Name = "sourcesPortable";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "sourcesPortable";
@@ -240,7 +252,6 @@ namespace toolkit
 			this.contextMenuStrip1.ResumeLayout(false);
 			this.ResumeLayout(false);
 			this.PerformLayout();
-
 		}
 	}
 }

@@ -10,7 +10,7 @@
     <AssemblyName>toolkit</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <ApplicationIcon>C:\Users\Oscar\Downloads\tools.ico</ApplicationIcon>
+    <ApplicationIcon>..\..\toolkit_32512.ico</ApplicationIcon>
     <NoWin32Manifest>False</NoWin32Manifest>
     <SignAssembly>False</SignAssembly>
     <DelaySign>False</DelaySign>
